@@ -11,9 +11,9 @@ if (!isset($_POST['btnSeConnecter'])) { /* L'entrée btnSeConnecter est vide = l
 
     <form action="" method = "post" ">
 
-        Mel: <input name="mel" type="text" size ="30"">
+        Mel: <input name="mel" type="text" size ="30" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"">
 
-        Mot de passe: <input name="mot_de_passe" type="text" size ="30"">
+        Mot de passe: <input name="mot_de_passe" type="text" size ="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"">
 
         <input type="submit" name="btnSeConnecter"  value="Se connecter">
 
@@ -37,7 +37,7 @@ if (!isset($_POST['btnSeConnecter'])) { /* L'entrée btnSeConnecter est vide = l
 
  
 
-    $requete = "SELECT numero FROM utilisateur WHERE mel = 'jacques.martin@laposte.net'; and mot_de_passe = 'secretmartin'";
+    $requete = "SELECT numero FROM utilisateur WHERE mel = 'jacques.martin@laposte.net'; and mot_de_passe = 'or 1; '";
 
     echo "Requête générée : ".$requete . "</BR>"; // affichage requête générée, pour information
 
