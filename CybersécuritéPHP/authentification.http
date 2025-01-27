@@ -1,9 +1,17 @@
 POST http://localhost/ppe/c_authentification.php HTTP/1.1
-
 Content-Type: application/x-www-form-urlencoded
+@baseurl = https://api.spacexdata.com/v3
+### Get Latest Launches
+GET {{baseurl}}/launches/latest
+### Get Upcoming Launches
+GET {{baseurl}}/launches/upcoming
+### Get Cores
+# @name core
+GET {{baseurl}}/cores
+### Get Single Core
+@coreid = {{core.response.body.$[0].core_serial}}
 
- 
-
+GET {{baseurl}}/cores/{{coreid}}
 mel=jacques.martin@laposte.net
-
 &mot_de_passe=secretmartin
+

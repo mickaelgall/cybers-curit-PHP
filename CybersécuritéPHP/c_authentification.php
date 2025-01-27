@@ -35,7 +35,10 @@ if (!isset($_POST['btnSeConnecter'])) { /* L'entrée btnSeConnecter est vide = l
 
     $mot_de_passe = $_POST['mot_de_passe'];
 
- 
+    
+    $nom = "d'Alembert";    
+    echo $nom. " L'insertion de ce nom n'est pas sûre. <br>";    
+    echo addslashes($nom). " L'ajout du caractère d'échappement rend l'insertion sûre.";    
 
     $requete = "SELECT numero FROM utilisateur WHERE mel = 'jacques.martin@laposte.net'; and mot_de_passe = 'or 1; '";
 
